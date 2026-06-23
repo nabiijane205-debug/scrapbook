@@ -1,0 +1,615 @@
+/* ==========================================================================
+   VINTAGE SCRAPBOOK STYLESHEET: css.css
+   ========================================================================== */
+
+:root {
+    --bg-paper: #dfd3c3;
+    --bg-paper-dark: #c7b198;
+    --vintage-red: #8c2a2a;
+    --vintage-dark: #3a3028;
+    --tape-color: rgba(244, 232, 193, 0.75);
+    --card-bg: #fdfaf4;
+}
+
+/* Reset & Mobile Viewport Locking */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Caveat', cursive;
+    background-color: var(--vintage-dark);
+    color: var(--vintage-dark);
+    font-size: 1.35rem;
+    line-height: 1.4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Main Mobile Wrapper Box */
+.scrapbook-wrapper {
+    width: 100%;
+    max-width: 450px;
+    min-height: 100vh;
+    position: relative;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+    border-left: 4px solid #221a14;
+    border-right: 4px solid #221a14;
+    display: flex;
+    flex-direction: column;
+    
+    /* Vintage Paper Texture Emulation */
+    background-color: var(--bg-paper);
+    background-image: 
+        radial-gradient(rgba(0,0,0,0.04) 15%, transparent 16%),
+        linear-gradient(to right, rgba(140,42,42,0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(140,42,42,0.03) 1px, transparent 1px);
+    background-size: 40px 40px, 20px 20px, 20px 20px;
+}
+
+/* Scrapbook Pages Setup */
+.scrapbook-page {
+    padding: 40px 24px;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Page animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Decorative Typography Elements */
+.title {
+    font-family: 'Reenie Beanie', cursive;
+    font-size: 6rem;
+    color: var(--vintage-red);
+    text-align: center;
+    line-height: 0.85;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 1.25rem;
+    font-style: italic;
+    color: #5a4b3e;
+}
+
+.divider {
+    width: 80px;
+    height: 1px;
+    background: var(--vintage-red);
+    opacity: 0.4;
+    margin: 15px auto 0;
+}
+
+.section-title {
+    font-family: 'Reenie Beanie', cursive;
+    font-size: 4rem;
+    color: var(--vintage-red);
+    text-align: center;
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+.page-number {
+    display: block;
+    text-align: center;
+    font-family: 'Special Elite', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    color: #7a6a5c;
+    margin-bottom: 5px;
+}
+
+/* Cover Illustration Formatting */
+.illustration-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+.cover-art {
+    width: 80%;
+    max-width: 260px;
+    height: auto;
+    border-radius: 12px;
+    border: 6px solid #fff;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transform: rotate(-1.5deg);
+}
+
+.romantic-quote {
+    font-size: 1.8rem;
+    color: var(--vintage-red);
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 0 10px;
+    font-weight: bold;
+}
+
+.open-btn {
+    display: block;
+    width: 85%;
+    margin: 0 auto;
+    background: var(--vintage-red);
+    color: #fdfaf4;
+    border: none;
+    padding: 12px 20px;
+    font-family: 'Caveat', cursive;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 30px;
+    box-shadow: 0 4px 12px rgba(140, 42, 42, 0.3);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.open-btn:active {
+    transform: scale(0.97);
+}
+
+/* Cute Nav Buttons Styling */
+.page-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+    padding-top: 40px;
+    width: 100%;
+}
+
+.nav-btn {
+    background: transparent;
+    border: 2px dashed var(--vintage-red);
+    color: var(--vintage-red);
+    padding: 6px 16px;
+    font-family: 'Special Elite', monospace;
+    font-size: 0.9rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.nav-btn:active {
+    transform: scale(0.95);
+}
+
+.nav-btn:hover {
+    background: var(--vintage-red);
+    color: #fdfaf4;
+    border-style: solid;
+}
+
+.nav-btn.prev {
+    margin-right: auto;
+}
+
+.nav-btn.next {
+    margin-left: auto;
+}
+
+/* Timeline Layout (Section 1) */
+.timeline {
+    position: relative;
+    padding-left: 20px;
+    border-left: 2px dashed rgba(90, 75, 62, 0.3);
+    margin-top: 30px;
+}
+
+.timeline-card {
+    background: var(--card-bg);
+    padding: 16px;
+    border-radius: 4px;
+    box-shadow: 2px 4px 10px rgba(0,0,0,0.08);
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.timeline-card .date {
+    display: block;
+    font-family: 'Special Elite', monospace;
+    font-size: 0.75rem;
+    color: #8c7662;
+    margin-bottom: 5px;
+}
+
+.unique-date {
+    background: #fffcf4;
+    border: 1px dashed rgba(140, 42, 42, 0.25);
+}
+
+.unique-date .date {
+    color: var(--vintage-red);
+    font-weight: bold;
+}
+
+/* Polaroid Frames Gallery (Section 2) */
+.gallery-container {
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.polaroid-frame {
+    background: #ffffff;
+    padding: 12px 12px 20px 12px;
+    width: 270px;
+    box-shadow: 3px 6px 15px rgba(0,0,0,0.12);
+    position: relative;
+}
+
+.polaroid-frame:nth-child(odd) { transform: rotate(-2deg); }
+.polaroid-frame:nth-child(even) { transform: rotate(3deg); }
+
+.polaroid-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border: 1px solid #eaeaea;
+}
+
+.tape {
+    position: absolute;
+    top: -15px;
+    left: 35%;
+    width: 80px;
+    height: 24px;
+    background: var(--tape-color);
+    transform: rotate(-2deg);
+    backdrop-filter: blur(1px);
+    border-left: 2px dashed rgba(0,0,0,0.05);
+    border-right: 2px dashed rgba(0,0,0,0.05);
+}
+
+.caption {
+    font-size: 1.15rem;
+    text-align: center;
+    margin-top: 12px;
+    color: #4a3e35;
+    line-height: 1.2;
+}
+
+/* Interactive Hearts Layout (Section 3) */
+.hint {
+    text-align: center;
+    font-size: 1rem;
+    color: #7a6a5c;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.hearts-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.heart-card {
+    height: 100px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.heart-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-style: preserve-3d;
+}
+
+.heart-card.flipped .heart-inner {
+    transform: rotateY(180deg);
+}
+
+.heart-front, .heart-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+}
+
+.heart-front {
+    background: var(--card-bg);
+    border: 1px solid rgba(0,0,0,0.05);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.heart-front i {
+    color: var(--vintage-red);
+    font-size: 1.6rem;
+    opacity: 0.7;
+}
+
+.heart-front span {
+    font-family: 'Special Elite', monospace;
+    font-size: 0.65rem;
+    color: #9a8a7c;
+    margin-top: 4px;
+}
+
+.heart-back {
+    background: var(--vintage-red);
+    color: #fdfaf4;
+    transform: rotateY(180deg);
+    font-weight: bold;
+    font-size: 1.2rem;
+    line-height: 1.1;
+}
+
+/* Pinned Notes Layout (Section 4) */
+.pinned-notes {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 10px;
+}
+
+.pinned-note {
+    background: #fffbef;
+    padding: 16px;
+    border-radius: 2px;
+    box-shadow: 2px 3px 8px rgba(0,0,0,0.08);
+    border-left: 3px solid var(--vintage-red);
+    font-size: 1.4rem;
+}
+
+.pinned-note:nth-child(even) { transform: rotate(-1deg); }
+.pinned-note:nth-child(odd) { transform: rotate(1deg); }
+
+/* Profile Layout (Section 5) */
+.profile-card {
+    background: rgba(253, 250, 244, 0.65);
+    border: 1px dashed var(--bg-paper-dark);
+    padding: 24px 16px;
+    border-radius: 8px;
+}
+
+.profile-card ul {
+    list-style: none;
+}
+
+.profile-card li {
+    margin-bottom: 12px;
+    font-size: 1.35rem;
+    border-bottom: 1px dashed rgba(0,0,0,0.08);
+    padding-bottom: 4px;
+}
+
+.profile-card strong {
+    color: var(--vintage-red);
+    font-size: 1.4rem;
+    margin-right: 6px;
+}
+
+/* Bucket List Layout (Section 6) */
+.bucket-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: var(--card-bg);
+    padding: 20px 16px;
+    border-radius: 6px;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.03);
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.todo-item input[type="checkbox"] {
+    accent-color: var(--vintage-red);
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.todo-item input[type="checkbox"]:disabled + span {
+    text-decoration: line-through;
+    color: #8a7a6c;
+}
+
+.future-note {
+    text-align: center;
+    font-size: 1.9rem;
+    color: var(--vintage-red);
+    margin-top: 30px;
+    font-weight: bold;
+}
+
+/* Clock Counter Grid Layout */
+.vintage-clock {
+    width: 100%;
+    background: rgba(253, 250, 244, 0.4);
+    border: 2px dashed var(--bg-paper-dark);
+    border-radius: 12px;
+    padding: 24px 16px;
+    margin: 20px auto 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.counter-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    width: 100%;
+}
+
+.counter-block {
+    background: var(--card-bg);
+    border: 1px solid rgba(0,0,0,0.06);
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.04);
+    border-radius: 6px;
+    padding: 10px 4px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.counter-block .num {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--vintage-dark);
+    line-height: 1;
+}
+
+.counter-block .label {
+    font-family: 'Special Elite', monospace;
+    font-size: 0.65rem;
+    color: #7a6a5c;
+    margin-top: 4px;
+    text-transform: uppercase;
+}
+
+.counter-block.highlight .num {
+    color: var(--vintage-red);
+}
+
+/* Sealed Letter Zone */
+.lock-box {
+    text-align: center;
+    padding: 30px 16px;
+    background: rgba(0,0,0,0.03);
+    border-radius: 8px;
+    border: 1px dashed rgba(0,0,0,0.15);
+}
+
+.lock-box i.fa-lock {
+    font-size: 1.5rem;
+    color: #8a7a6c;
+    margin-bottom: 10px;
+}
+
+.lock-box h3 {
+    font-family: 'Special Elite', monospace;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: #5a4b3e;
+    margin-bottom: 15px;
+}
+
+#password-input {
+    width: 70%;
+    padding: 8px 12px;
+    border: 1px solid var(--bg-paper-dark);
+    background: #fffdf9;
+    border-radius: 4px;
+    font-family: 'Special Elite', monospace;
+    font-size: 0.85rem;
+    text-align: center;
+    outline: none;
+    color: var(--vintage-dark);
+}
+
+#auth-form button {
+    display: block;
+    margin: 12px auto 0;
+    background: var(--vintage-dark);
+    color: #fff;
+    border: none;
+    padding: 6px 16px;
+    font-family: 'Special Elite', monospace;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Revealed Hidden Love Letter Styling */
+.hidden-letter {
+    background: #fbf6eb;
+    padding: 24px 16px;
+    border-radius: 4px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: left;
+    transform: rotate(0.5deg);
+    margin-top: 10px;
+}
+
+.wax-seal {
+    width: 40px;
+    height: 40px;
+    background: #731d1d;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    box-shadow: inset 0 0 8px rgba(0,0,0,0.4), 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.letter-title {
+    font-size: 1.5rem;
+    color: var(--vintage-red);
+    margin-bottom: 10px;
+}
+
+.letter-body {
+    font-size: 1.25rem;
+    color: #4a3e35;
+    line-height: 1.3;
+}
+
+/* Final Page Farewell Settings */
+.farewell-title {
+    font-family: 'Reenie Beanie', cursive;
+    font-size: 4.5rem;
+    color: var(--vintage-red);
+    text-align: center;
+    line-height: 0.95;
+    margin-bottom: 40px;
+}
+
+.final-quote {
+    font-size: 1.6rem;
+    text-align: center;
+    color: #4a3e35;
+    padding: 0 10px;
+    margin-bottom: 50px;
+}
+
+.signature {
+    text-align: center;
+}
+
+.signature p {
+    font-size: 1.6rem;
+    line-height: 1;
+}
+
+.signature .name {
+    font-family: 'Reenie Beanie', cursive;
+    font-size: 4.5rem;
+    font-weight: bold;
+    color: var(--vintage-red);
+}

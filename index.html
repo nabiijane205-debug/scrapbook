@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Just Us - Our Scrapbook</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Reenie+Beanie&family=Special+Elite&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/css.css">
+</head>
+<body>
+
+    <audio id="bg-music" loop src="audio/flowers.mpeg"></audio> 
+
+    <main class="scrapbook-wrapper">
+        
+        <section id="page-0" class="scrapbook-page">
+            <div class="cover-header">
+                <h1 class="title">Just Us</h1>
+                <p class="subtitle">A little scrapbook made by Jane for Rose.</p>
+                <div class="divider"></div>
+            </div>
+
+            <div class="illustration-container">
+                <img src="images/cartoon.jpeg" alt="Jane and Rose holding hands" class="cover-art">
+            </div>
+
+            <div class="cover-footer">
+                <p class="romantic-quote">
+                    "Some people become memories. You became part of my story."
+                </p>
+                <button onclick="changePage(1)" class="open-btn">
+                    Open the Scrapbook <i class="fas fa-book-open"></i>
+                </button>
+            </div>
+        </section>
+
+        <section id="page-1" class="scrapbook-page hidden">
+            <span class="page-number">— Chapter One —</span>
+            <h2 class="section-title">How It All Started</h2>
+            
+            <div class="timeline">
+                <div class="timeline-card">
+                    <span class="date">High School</span>
+                    <p>We met back in high school. Rose seemed scary at first, i was genuinly scared of her...</p>
+                </div>
+                <div class="timeline-card">
+                    <span class="date">Later On</span>
+                    <p>I realied i liked you much more than i should have.</p>
+                </div>
+                <div class="timeline-card unique-date">
+                    <span class="date">April 1, 2026</span>
+                    <p>Our relationship officially started. The best and the most scary night ever.</p>
+                </div>
+            </div>
+            
+            <div class="page-nav">
+                <button class="nav-btn prev" onclick="changePage(0)"><i class="fas fa-arrow-left"></i> Back</button>
+                <button class="nav-btn next" onclick="changePage(2)">Next <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </section>
+
+        <section id="page-2" class="scrapbook-page hidden">
+            <span class="page-number">— Gallery —</span>
+            <h2 class="section-title">Our Memories</h2>
+            
+            <div class="gallery-container">
+                <div class="polaroid-frame">
+                    <div class="tape"></div>
+                    <img src="images/1.jpeg" alt="existing" class="polaroid-img">
+                    <p class="caption">us just existing.</p>
+                </div>
+                <div class="polaroid-frame">
+                    <div class="tape"></div>
+                    <img src="images/2.jpeg" alt="us" class="polaroid-img">
+                    <p class="caption">us being all cute.</p>
+                </div>
+                <div class="polaroid-frame">
+                    <div class="tape"></div>
+                    <img src="images/3.jpeg" alt="Girlfriends" class="polaroid-img">
+                    <p class="caption">me totally in love with my girl❤️</p>
+                </div>
+            </div>
+
+            <div class="page-nav">
+                <button class="nav-btn prev" onclick="changePage(1)"><i class="fas fa-arrow-left"></i> Back</button>
+                <button class="nav-btn next" onclick="changePage(3)">Next <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </section>
+
+        <section id="page-3" class="scrapbook-page hidden">
+            <span class="page-number">— Reasons —</span>
+            <h2 class="section-title">Things I Love About You</h2>
+            <p class="hint">Tap a heart to remember...</p>
+            
+            <div class="hearts-grid" id="hearts-grid"></div>
+
+            <div class="page-nav">
+                <button class="nav-btn prev" onclick="changePage(2)"><i class="fas fa-arrow-left"></i> Back</button>
+                <button class="nav-btn next" onclick="changePage(4)">Next <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </section>
+
+        <section id="page-4" class="scrapbook-page hidden">
+            <span class="page-number">— Secrets —</span>
+            <h2 class="section-title">Things You Don't Know You Do</h2>
+            
+            <div class="pinned-notes">
+                <div class="pinned-note"><p>"You make me want to become better in all aspects fr."</p></div>
+                <div class="pinned-note"><p>"You challenge me without even knowing it fr."</p></div>
+                <div class="pinned-note"><p>"You make me want to try new things, not the snake thing though"</p></div>
+                <div class="pinned-note"><p>"You make me happy."</p></div>
+                <div class="pinned-note"><p>"You constantly show me that being in touch with my emotions is not that bad."</p></div>
+            </div>
+
+            <div class="page-nav">
+                <button class="nav-btn prev" onclick="changePage(3)"><i class="fas fa-arrow-left"></i> Back</button>
+                <button class="nav-btn next" onclick="changePage(5)">Next <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </section>
+
+        <section id="page-5" class="scrapbook-page hidden">
+            <span class="page-number">— Profile —</span>
+            <h2 class="section-title">About Rose</h2>
+            
+            <div class="profile-card">
+                <ul>
+                    <li><strong>Intelligent:</strong> you always want to know more,you ask questions and that is what makes one intelligent.</li>
+                    <li><strong>Smart:</strong> you have a brilliant mind. i will keep on telling you that until you believe it.</li>
+                    <li><strong>Beautiful:</strong> You are Stunning inside and out.</li>
+                    <li><strong>sensitive:</strong> you feel deeply and that makes you so aware of your feelings.</li>
+                    <li><strong>Kind:</strong> you have a heart warmer than the sun.</li>
+                </ul>
+            </div>
+
+            <div class="page-nav">
+                <button class="nav-btn prev" onclick="changePage(4)"><i class="fas fa-arrow-left"></i> Back</button>
+                <button class="nav-btn next" onclick="changePage(6)">Next <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </section>
+
+        <section id="page-6" class="scrapbook-page hidden">
+            <span class="page-number">— Dreams —</span>
+            <h2 class="section-title">Our Future</h2>
+            
+            <div class="bucket-list">
+                <label class="todo-item"><input type="checkbox" checked disabled> <span>Watching sunsets together</span></label>
+                <label class="todo-item"><input type="checkbox"> <span>Going camping</span></label>
+                <label class="todo-item"><input type="checkbox"> <span>Having picnics</span></label>
+                <label class="todo-item"><input type="checkbox"> <span>Traveling to Bali, well i would go with you if you want to</span></label>
+                <label class="todo-item"><input type="checkbox"> <span>Traveling to Thailand</span></label>
+                <label class="todo-item"><input type="checkbox"> <span>Traveling to Rome, i would love to go here fr</span></label>
+                <label class="todo-item"><input type="checkbox"> <span>Traveling to Rwanda, isit really that clean as they claim?</span></label>
+                <label class="todo-item"><input type="checkbox"> <span>exploring resturants</span></label>
+            </div>
+            <p class="future-note">"my gorgeous human, I love you."</p>
+
+            <div class="page-nav">
+                <button class="nav-btn prev" onclick="changePage(5)"><i class="fas fa-arrow-left"></i> Back</button>
+                <button class="nav-btn next" onclick="changePage(7)">Next <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </section>
+
+        <section id="page-7" class="scrapbook-page hidden">
+            <span class="page-number">— Ticker —</span>
+            <h2 class="section-title">Time Together</h2>
+            <div class="vintage-clock">
+                <div id="counter">
+                    <p>Loading our time...</p>
+                </div>
+            </div>
+
+            <div class="page-nav">
+                <button class="nav-btn prev" onclick="changePage(6)"><i class="fas fa-arrow-left"></i> Back</button>
+                <button class="nav-btn next" onclick="changePage(8)">Next <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </section>
+
+        <section id="page-8" class="scrapbook-page hidden">
+            <span class="page-number">— Private —</span>
+            <div class="lock-box">
+                <i class="fas fa-lock"></i>
+                <h3>A Sealed Love Letter</h3>
+                <div id="auth-form">
+                    <input type="password" id="password-input" placeholder="Enter password...">
+                    <button onclick="checkPassword()">Unlock Letter</button>
+                </div>
+                
+                <div id="secret-letter" class="hidden-letter hidden">
+                    <div class="wax-seal"></div>
+                    <h4 class="letter-title">My Dearest Rose,</h4>
+                    <p class="letter-body">
+                        some say time is jut a concept<br>it is all just in our minds<br> to maybe keep us sane<br> becuse livin in the 
+                    </p>
+                </div>
+            </div>
+
+            <div class="page-nav">
+                <button class="nav-btn prev" onclick="changePage(7)"><i class="fas fa-arrow-left"></i> Back</button>
+                <button class="nav-btn next" onclick="changePage(9)">Next <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </section>
+
+        <section id="page-9" class="scrapbook-page hidden">
+            <h2 class="farewell-title">Thank you for existing, you are my favourite person.</h2>
+            
+            <p class="final-quote">
+                "No matter where life takes us, thank you for becoming one of the most beautiful parts of my story."
+            </p>
+            
+            <div class="signature">
+                <p>Love,</p>
+                <p class="name">Jane ❤️</p>
+            </div>
+
+            <div class="page-nav">
+                <button class="nav-btn prev" onclick="changePage(8)"><i class="fas fa-arrow-left"></i> Back</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
